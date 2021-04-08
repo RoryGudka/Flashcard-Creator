@@ -1,13 +1,178 @@
+* {
+  position:relative;
+  font-family: 'Noto Serif JP', serif;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin:0;
+}
+p {
+  margin:0;
+}
+.clearStyle {
+  background-color:rgb(0,0,0,0.1);
+  border:2px solid black;
+  color:black;
+  transition:0.1s;
+}
+.clearStyle:hover {
+  background-color:rgb(0,0,0,0.2);
+  box-shadow: 0 0 3px 2px white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+
+#searchWrap {
+  width:80%;
+  left:10%;
+  padding:40px 0;
+}
+#searchTxtWrap {
+  display:inline-block;
+  width:80%;
+}
+#formatWrap {
+  width:80%;
+  left:10%;
+}
+#container {
+  text-align:center;
+}
+.word {
+  padding:10px;
+  margin:20px;
+  vertical-align: middle;
+  display:inline-block;
+  width:250px;
+  text-align:center;
+}
+.meaning {
+  display:table;
+  padding:5px 0;
+}
+.meaningP {
+  display:table-cell;
+  vertical-align:middle;
+  width:80%;
+}
+.add.MuiButton-outlined {
+  display:table-cell;
+  vertical-align:middle;
+  padding-top:0;
+  padding-bottom:0;
+}
+.addRoot {
+  margin:20px;
+}
+
+
+
+.japanese {
+  padding:20px;
+}
+.basic {
+  font-size:22px;
+  margin-bottom:-20px;
+}
+.advanced {
+  font-size:50px;
+}
+.meanings {
+  padding:20px;
+  padding-top:0;
+  text-align:left;
+}
+
+
+
+#format {
+  width:80%;
+  text-align:center;
+  font-size:24px;
+  margin-bottom:40px;
+  border-radius:10px;
+  padding:0;
+}
+
+
+.outputWrap {
+  text-align:center;
+  margin:20px;
+}
+#output {
+  width:80%;
+  height:250px;
+  text-align:center;
+  font-size:24px;
+  padding:10px;
+  margin-bottom:40px;
+  border-radius:20px;
+}
+
+.backgroundImage {
+  position:fixed;
+  width:100%;
+  height:100vh;
+}
+.backgroundImage IMG {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.backgroundTint {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  background-color:rgb(0,0,0,0.2);
+}
+
+
+
+#cards {
+  width:80%;
+  left:10%;
+  font-size:20px;
+}
+.card {
+  display:table;
+  background-color:white;
+  width:100%;
+  height:80px;
+  border-radius:10px;
+  margin:10px 0;
+  opacity:0.8;
+}
+.fakeCard {
+  width:100%;
+  height:80px;
+  margin:10px 0;
+}
+.dots {
+  display:table-cell;
+  width:40px;
+  height:80%;
+  padding:10px 20px;
+  vertical-align:middle;
+}
+.dots I {
+  font-size:20px;
+}
+.cardTerm {
+  display:table-cell;
+  padding:10px;
+  vertical-align:middle;
+  width:20%;
+}
+.cardDefinition {
+  display:table-cell;
+  padding:10px;
+  vertical-align:middle;
+  width:60%;
+}
+
+.dragging {
+  position:absolute;
+  z-index:3;
+  margin:0;
 }
