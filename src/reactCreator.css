@@ -1,0 +1,193 @@
+* {
+  position:relative;
+  font-family: 'Noto Serif JP', serif;
+}
+body {
+  margin:0;
+}
+p {
+  margin:0;
+}
+.clearStyle {
+  background-color:rgb(0,0,0,0.1);
+  border:2px solid black;
+  color:black;
+  transition:0.1s;
+}
+.clearStyle:hover {
+  background-color:rgb(0,0,0,0.2);
+  box-shadow: 0 0 3px 2px white;
+}
+
+
+
+
+.searchWrap {
+  text-align:center;
+  padding:20px;
+}
+#searchInp {
+  height:10px;
+  width:60%;
+  border-radius:10px;
+  padding:10px;
+}
+#searchBtn {
+  width:100px;
+  height:40px;
+  border-radius:10px;
+  background-color:lightblue;
+  font-size:20px;
+  line-height:40px;
+  transition:0.2s;
+  text-align:center;
+  display:inline-block
+}
+#searchBtn P {
+  margin:0;
+}
+#searchBtn:hover {
+  background-color:aquamarine;
+}
+
+#container {
+  text-align:center;
+}
+.word {
+  vertical-align: middle;
+  display:inline-block;
+  width:250px;
+  text-align:center;
+  background-color:lightgrey;
+  box-shadow:0 0 10px 10px grey;
+  border-radius:20px;
+  margin:40px;
+}
+.japanese {
+  padding:20px;
+}
+.basic {
+  font-size:22px;
+  margin-bottom:-20px;
+}
+.advanced {
+  font-size:50px;
+}
+.meanings {
+  padding:20px;
+  padding-top:0;
+  text-align:left;
+}
+.meaning {
+  display:block;
+  padding:5px 0;
+}
+.meaning P {
+  display:inline-block;
+}
+.add {
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:10px;
+  margin-left:30px;
+  font-size:12px;
+
+}
+
+
+
+#formatWrap {
+  width:100%;
+  text-align:center;
+}
+#format {
+  width:80%;
+  text-align:center;
+  font-size:24px;
+  margin-bottom:40px;
+  border-radius:10px;
+  padding:0;
+}
+
+
+.outputWrap {
+  text-align:center;
+  margin:20px;
+}
+#output {
+  width:80%;
+  height:250px;
+  text-align:center;
+  font-size:24px;
+  padding:10px;
+  margin-bottom:40px;
+  border-radius:20px;
+}
+
+.backgroundImage {
+  position:fixed;
+  width:100%;
+  height:100vh;
+}
+.backgroundImage IMG {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.backgroundTint {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  background-color:rgb(0,0,0,0.2);
+}
+
+
+
+#cards {
+  width:80%;
+  left:10%;
+  font-size:20px;
+}
+.card {
+  display:table;
+  background-color:white;
+  width:100%;
+  height:80px;
+  border-radius:10px;
+  margin:10px 0;
+  opacity:0.8;
+}
+.fakeCard {
+  width:100%;
+  height:80px;
+  margin:10px 0;
+}
+.dots {
+  display:table-cell;
+  width:40px;
+  height:80%;
+  padding:10px 20px;
+  vertical-align:middle;
+}
+.dots I {
+  font-size:20px;
+}
+.cardTerm {
+  display:table-cell;
+  padding:10px;
+  vertical-align:middle;
+  width:20%;
+}
+.cardDefinition {
+  display:table-cell;
+  padding:10px;
+  vertical-align:middle;
+  width:60%;
+}
+
+.dragging {
+  position:absolute;
+  z-index:3;
+  margin:0;
+}
