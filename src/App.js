@@ -12,6 +12,32 @@ const App = props => {
     const [cards, setCards] = useState([]);
 
 
+    const getTerm = card => {
+        const result = parseFormat();
+        const term = result['term'];
+
+        let termStr = "";
+        let index = 0;
+        for(let i  = 0; i < term.keywords.length; i++) {
+            termStr += term.str.substring(index, term.keywords[i].index) + card[term.keywords[i].keyword];
+            index = term.keywords[i].index;
+        }
+        termStr += term.str.substring(index);
+        return termStr;
+    }
+    const getDef = card => {
+        const result = parseFormat();
+        const def = result['def'];
+
+        let defStr = "";
+        let index = 0;
+        for(let i  = 0; i < def.keywords.length; i++) {
+            defStr += def.str.substring(index, def.keywords[i].index) + card[def.keywords[i].keyword];
+            index = def.keywords[i].index;
+        }
+        defStr += def.str.substring(index);
+        return defStr;
+    }
     const getTermAndDef = card => {
         const result = parseFormat();
         const term = result['term'];
@@ -56,7 +82,7 @@ const App = props => {
         let newStr = str;
         let cur = getFirstKeyword(newStr);
         let count = 0;
-        while(cur.index != -1  && count < 10) {
+        while(cur.index !== -1  && count < 10) {
             result.push(cur);
             newStr = removeFirstOccurrence(newStr, cur.keyword);
             cur = getFirstKeyword(newStr);
@@ -75,7 +101,7 @@ const App = props => {
         };
         for(let i = 0; i < keywords.length; i++) {
             if(str.includes(keywords[i])) {
-                if(min.index == -1 || str.indexOf(keywords[i]) < min.index) {
+                if(min.index === -1 || str.indexOf(keywords[i]) < min.index) {
                     min.index = str.indexOf(keywords[i]);
                     min.keyword = keywords[i];
                 }
@@ -128,8 +154,9 @@ const App = props => {
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send(`eng=${query}`);
     };
-    const handleFormatChange = () => {
-
+    const handleFormatChange = e => {
+        console.log(e.target.value);
+        setFormat(e.target.value);
     };
     const handleAdd = (e, i, j) => {
         const word = options[i].word;
@@ -204,10 +231,10 @@ const App = props => {
                 <DragHandleIcon className="dragHandle" />
             </div>
             <div className="cardTerm">
-                <p><b>{card.term}</b></p>
+                <p><b>{getTerm(card)}</b></p>
             </div>
             <div className="cardDef">
-                <p>{card.definition}</p>
+                <p>{getDef(card)}</p>
             </div>
         </Paper>
     ));
@@ -221,7 +248,7 @@ const App = props => {
             </div>
             <div id="container"></div>
             <div id="formatWrap">
-                <TextField fullWidth id="formatInp" value={format} onChange={() => handleFormatChange} />
+                <TextField fullWidth id="formatInp" value={format} onChange={handleFormatChange} />
             </div>
             <div id="cards">
                 <Grid container justify="center">
